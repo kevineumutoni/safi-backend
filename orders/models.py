@@ -12,7 +12,7 @@ class Order(models.Model):
 
     def update_total_price(self):
         total=self.orderitem_set.aggregate(
-            total=Sum(F('quantity') * ('price_at_order'))
+            total=Sum(('quantity') * ('price_at_order'))
         )['total'] or 0
         self.total_price = total
         self.save()
