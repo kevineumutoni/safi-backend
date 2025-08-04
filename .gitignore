@@ -1,0 +1,24 @@
+env/
+__pycache__/
+*.pyc
+db.sqlite3
+# Database backups
+db*.backup
+db_backup.json
+*.sqlite3
+backups/
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+.envenv/
+__pycache__/
+*.pyc
+db.sqlite3
+.env
+
+env/
+__pycache__/
+*.pyc
+db.sqlite3
+.back
+.bac
