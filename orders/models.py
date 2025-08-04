@@ -1,7 +1,7 @@
 from django.db import models
 from users.models import User
 from product.models import Product
-from django.db.models import Sum
+from django.db.models import Sum, F
 class Order(models.Model):
     order_id = models.AutoField(primary_key=True)
     vendor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='vendor_orders', limit_choices_to={'user_type':'vendor'})
@@ -12,7 +12,7 @@ class Order(models.Model):
 
     def update_total_price(self):
         total=self.orderitem_set.aggregate(
-            total=Sum(('quantity') * ('price_at_order'))
+            total=Sum(F('quantity') * F('price_at_order'))
         )['total'] or 0
         self.total_price = total
         self.save()
