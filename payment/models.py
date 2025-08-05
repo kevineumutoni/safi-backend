@@ -91,7 +91,7 @@ class Payment(models.Model):
         ]
 
     def __str__(self):
-        return f"Payment {self.payment_id} for Order {self.order_id.order_id} ({self.status})"
+        return f"Payment {self.payment_id} for Order {self.order.order_id} ({self.status})"
     
     def save(self, *args, **kwargs):
         if not self.amount:
