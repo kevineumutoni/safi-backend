@@ -58,9 +58,8 @@ REST_FRAMEWORK = {
 from datetime import timedelta
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  # 1 hour, or set as you like
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    # ...other settings
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=999999), 
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=999999),
 }
 
 MIDDLEWARE = [
