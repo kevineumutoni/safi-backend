@@ -48,9 +48,9 @@ class SubscriptionBox(models.Model):
 
     def clean(self):
         super().clean()
-        if self.buyer and self.buyer.type != 'customer':
+        if self.buyer and self.buyer.user_type != 'customer':
             raise ValidationError({"buyer": "Buyer must be of type 'customer'."})
-        if self.vendor and self.vendor.type != 'vendor':
+        if self.vendor and self.vendor.user_type != 'vendor':
             raise ValidationError({"vendor": "Vendor must be of type 'vendor'."})
 
     class Meta:
